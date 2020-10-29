@@ -16,30 +16,22 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: "gatsby-source-graphql",
       options: {
-
         typeName: "WPGraphql",
-        
         fieldName: "wpcontent",
-        
-        url: "http://Ayadi-agency.codobi.be/graphql",
-
+        url: "http://artist-agency.codobi.be/graphql",
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      
+      resolve: "gatsby-plugin-google-fonts",
       options: {
-      
-      fonts: [`Roboto`, `Oswald`],
-      
-      display: "swap",
-      
+        fonts: ["Roboto", "Oswald"],
+        display: "swap",
       },
-     }, 
-     `gatsby-plugin-styled-components`,
-     {
+    },
+    "gatsby-plugin-styled-components",
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
