@@ -1,5 +1,6 @@
 import React from "react"
-import {Link, useStaticQuery, graphql} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import {
@@ -69,7 +70,7 @@ const IndexPage = () => {
       }
     }
   `)
-
+  console.log(homePageFeaturedArtists)
   return (
     <Layout>
       <SEO title="Home" />
@@ -83,7 +84,6 @@ const IndexPage = () => {
             <p className="header-title">{homePageHeaderTitle}</p>
             <p className="header-description">{homePageHeaderDescription}</p>
           </div>
-          
           <BottomEdgeDown color={COLORS.BLACK} />
         </div>
         <div className="description">
@@ -92,7 +92,6 @@ const IndexPage = () => {
         </div>
         <div className="artists">
           <h2>Featured Artists</h2>
-          
           <div className="artist-items">
             {homePageFeaturedArtists.map(({ artist, slug }) => (
               <Artist to={`/${slug}`}>
@@ -114,6 +113,5 @@ const IndexPage = () => {
     </Layout>
   )
 }
-
 
 export default IndexPage
