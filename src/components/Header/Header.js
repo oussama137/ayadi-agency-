@@ -4,6 +4,10 @@ import PropTypes from "prop-types"
 import Menu from "./Menu"
 import { HeaderWrapper, Image } from "./headerStyles/headerStyles"
 
+
+
+
+
 const Header = ({ siteTitle }) => {
   const {
     logo,
@@ -22,14 +26,14 @@ const Header = ({ siteTitle }) => {
           edges {
             node {
               label
-              path 
+              path
             }
           }
         }
       }
     }
-  `)
-
+  `) 
+  
   return (
     <HeaderWrapper>
       <Link to="/">
