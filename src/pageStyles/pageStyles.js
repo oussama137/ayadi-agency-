@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../constants"
+import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../constants"
 
 export const Wrapper = styled.div`
   .banner {
@@ -9,11 +9,9 @@ export const Wrapper = styled.div`
     position: relative;
     width: 100%;
     height: 580px;
-
     @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
       height: 355px;
     }
-
     .inner-div {
       display: flex;
       flex-direction: column;
@@ -24,23 +22,19 @@ export const Wrapper = styled.div`
       width: 60%;
       padding: 1rem;
       background-color: ${COLORS.PRIMARY + "d0"};
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         top: 120px;
         margin-top: 30px;
         width: 90%;
       }
-
       p {
         color: white;
         font-size: 1.3rem;
         text-align: center;
-
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1rem;
         }
       }
-
       .header-title {
         font-family: ${FONT_FAMILIES.TITLE};
         font-size: 3rem;
@@ -50,14 +44,12 @@ export const Wrapper = styled.div`
         margin: auto;
         border-bottom: solid 5px white;
         margin-bottom: 1rem;
-
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1.5rem;
         }
       }
     }
   }
-
   .description {
     display: flex;
     flex-direction: column;
@@ -66,7 +58,6 @@ export const Wrapper = styled.div`
     padding: 3rem 0 10rem;
     background-color: ${({ descriptionColor = COLORS.BLACK }) =>
       `${descriptionColor}`};
-
     h2 {
       font-family: ${FONT_FAMILIES.TITLE};
       font-size: 3rem;
@@ -74,12 +65,10 @@ export const Wrapper = styled.div`
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 3rem;
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         font-size: 1.5rem;
       }
     }
-
     p {
       width: 70%;
       font-size: 1.3rem;
@@ -87,45 +76,37 @@ export const Wrapper = styled.div`
       text-align: center;
       line-height: 2rem;
       margin: auto;
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         width: 90%;
         font-size: 1rem;
       }
     }
   }
-
   .contact-info {
     display: flex;
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     margin-top: 2rem;
-
     @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
       flex-direction: column;
     }
-
     div {
       width: 33.33%;
       padding: 1em;
       color: ${COLORS.TERTIARY};
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         width: 100%;
       }
-
       p {
         margin-top: 1rem;
         color: white;
-
         a {
           color: ${COLORS.SECONDARY};
         }
       }
     }
   }
-
   .artists {
     display: flex;
     flex-direction: column;
@@ -135,20 +116,17 @@ export const Wrapper = styled.div`
     padding: 2rem 5%;
     background-color: ${({ artistsColor = COLORS.PRIMARY }) =>
       `${artistsColor}`};
-
     h2 {
       font-family: ${FONT_FAMILIES.TITLE};
       font-size: 3rem;
       color: white;
       text-transform: uppercase;
       margin-bottom: 3rem;
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         font-size: 2rem;
         margin-bottom: 2rem;
       }
     }
-
     .artist-items {
       display: flex;
       flex-direction: row;
@@ -168,26 +146,21 @@ export const Artist = styled(Link)`
   margin: 2vw;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-
   @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
     width: 90vw;
     height: 90vw;
     margin: 2vw 0;
   }
-
   &:hover {
     transform: scale(1.05);
-
     .artist-info {
       height: 100%;
       background-color: ${COLORS.TERTIARY + "c0"};
-
       p {
         color: ${COLORS.BLACK};
       }
     }
   }
-
   .artist-info {
     display: flex;
     flex-direction: column;
@@ -200,7 +173,6 @@ export const Artist = styled(Link)`
     padding: 1rem;
     background-color: ${COLORS.BLACK + "c0"};
     transition: all 0.3s ease-in-out;
-
     p {
       text-transform: uppercase;
       font-size: 1.3rem;
@@ -208,10 +180,8 @@ export const Artist = styled(Link)`
       color: white;
       margin: 0;
     }
-
     p:nth-child(2) {
       color: ${COLORS.SECONDARY};
-
       margin-top: 0.3rem;
     }
   }
@@ -223,7 +193,6 @@ export const BottomEdgeDown = styled.div`
   width: 0;
   border-bottom: 130px solid ${COLORS.TERTIARY};
   border-right: 100vw solid transparent;
-
   &:before {
     content: "";
     display: block;
@@ -239,13 +208,11 @@ export const BottomEdgeUp = styled.div`
   width: 0;
   border-bottom: 140px solid ${COLORS.TERTIARY};
   border-right: 100vw solid transparent;
-
   &:after {
     content: "";
     display: block;
     border-bottom: ${({ color }) => `100px solid ${color}`};
     border-left: 100vw solid transparent;
-
     transform: translateY(140px) scale(1.05);
   }
 `

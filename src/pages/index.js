@@ -9,7 +9,7 @@ import {
   BottomEdgeDown,
   BottomEdgeUp,
   Artist,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const IndexPage = () => {
@@ -56,7 +56,7 @@ const IndexPage = () => {
                     sourceUrl
                     imageFile {
                       childImageSharp {
-                        fluid(quality: 100, grayscale: true) {
+                        fluid(quality: 50, grayscale: true) {
                           ...GatsbyImageSharpFluid_withWebp
                         }
                       }
@@ -70,7 +70,7 @@ const IndexPage = () => {
       }
     }
   `)
-  console.log(homePageFeaturedArtists)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -94,10 +94,10 @@ const IndexPage = () => {
           <h2>Featured Artists</h2>
           <div className="artist-items">
             {homePageFeaturedArtists.map(({ artist, slug }) => (
-              <Artist to={`/${slug}`}>
+              <Artist key={slug} to={`/${slug}`}>
                 <Image
                   fluid={artist.profile.imageFile.childImageSharp.fluid}
-                  altText={artist.profile.altText}
+                  alt={artist.profile.altText}
                 />
                 <div className="artist-info">
                   <p>

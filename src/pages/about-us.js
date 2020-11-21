@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -7,42 +7,43 @@ import {
   Wrapper,
   Image,
   BottomEdgeDown,
-  BottomEdgeUp
-} from "./pageStyles/pageStyles"
+  BottomEdgeUp,
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const AboutUsPage = () => {
-    const {
-        wpcontent: {
-          page: {
-            aboutUsMeta: { aboutUsPageDescription, aboutUsPageHeaderPicture },
-          },
-        },
-      } = useStaticQuery(graphql`
+  const {
+    wpcontent: {
+      page: {
+        aboutUsMeta: { aboutUsPageDescription, aboutUsPageHeaderPicture },
+      },
+    },
+  } = useStaticQuery(graphql`
     query {
-        wpcontent {
-          page(id: "about-us", idType: URI) {
-            aboutUsMeta {
-              aboutUsPageDescription
-              aboutUsPageHeaderPicture {
-                sourceUrl
-                imageFile {
-                  childImageSharp {
-                    fluid(quality: 100) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+      wpcontent {
+        page(id: "about-us", idType: URI) {
+          aboutUsMeta {
+            aboutUsPageDescription
+            aboutUsPageHeaderPicture {
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
-                altText
               }
+              altText
             }
           }
         }
       }
-    `)
-    return(
-       <Layout>
-           <SEO title="About Us" />
+    }
+  `)
+
+  return (
+    <Layout>
+      <SEO title="About Us" />
       <Wrapper descriptionColor={COLORS.PRIMARY}>
         <div className="banner">
           <Image
@@ -57,7 +58,8 @@ const AboutUsPage = () => {
           <BottomEdgeUp color={COLORS.BLACK} />
         </div>
       </Wrapper>
-       </Layout>
-    )
+    </Layout>
+  )
 }
+
 export default AboutUsPage
