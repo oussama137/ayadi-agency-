@@ -3,9 +3,9 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header/Header"
-import Hamburger from "./header/Hamburger"
-import OverlayMenu from "./header/OverlayMenu"
+import Header from "./Header/Header"
+import Hamburger from "./Header/Hamburger"
+import OverlayMenu from "./Header/OverlayMenu"
 import "./layout.css"
 
 const Layout = ({ children }) => {
